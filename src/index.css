@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 6%;
+    --foreground: 210 20% 92%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 20% 92%;
+
+    /* Deeper, richer purple */
+    --primary: 268 65% 45%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 220 15% 16%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 220 15% 14%;
+    --muted-foreground: 215 15% 55%;
+
+    /* Warmer, slightly more vivid orange */
+    --accent: 22 90% 52%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 268 15% 18%;
+    --input: 268 15% 18%;
+    --ring: 268 65% 45%;
+
+    --radius: 0.5rem;
+
+    --glow-primary: 0 0 24px hsl(268 65% 45% / 0.2);
+    --glow-accent: 0 0 24px hsl(22 90% 52% / 0.2);
+
+    --sidebar-background: 220 18% 8%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 14px hsl(268 65% 45% / 0.4);
+  }
+
+  .text-glow-accent {
+    text-shadow: 0 0 14px hsl(22 90% 52% / 0.4);
+  }
+
+  .border-glow {
+    box-shadow: 0 0 14px hsl(268 65% 45% / 0.15), inset 0 1px 0 hsl(268 65% 45% / 0.08);
+  }
+
+  .card-hover {
+    @apply transition-all duration-500;
+  }
+
+  .card-hover:hover {
+    box-shadow: 0 8px 30px hsl(268 65% 45% / 0.15), 0 20px 60px hsl(220 20% 6% / 0.5);
+    transform: translateY(-4px);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+
+  .scanline {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(268 65% 45% / 0.02) 2px,
+      hsl(268 65% 45% / 0.02) 4px
+    );
+  }
+}
